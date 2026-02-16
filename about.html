@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo"><span class="logo-bracket">[</span>Success Squad<span class="logo-bracket">]</span></div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link active">About Us</a></li>
+      <li><a href="team.html" class="nav-link">Our Team</a></li>
+      <li><a href="events.html" class="nav-link">Events</a></li>
+      <li><a href="startups.html" class="nav-link">Startups</a></li>
+      <li><a href="contact.html" class="nav-link nav-cta">Get Involved</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="section-label">About Us</div>
+    <h1>We are the <span class="accent">Success Squad</span></h1>
+    <p>The Success Squad is a student-led organization dedicated to building a vibrant startup culture on campus — empowering students to dream, build, and lead.</p>
+  </div>
+
+  <section class="section" style="background: var(--bg);">
+    <div class="two-col">
+      <div class="col-text">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Born from a <span class="accent">spark.</span></h2>
+        <p style="color: var(--text-muted); line-height: 1.85; margin-bottom: 20px;">
+          Success Squad was founded with one simple belief: every student has the potential to be a founder. We started as a small group of passionate students who wanted to do more than just attend lectures — we wanted to build things that matter.
+        </p>
+        <p style="color: var(--text-muted); line-height: 1.85; margin-bottom: 32px;">
+          Today, we are a thriving community of entrepreneurs, innovators, and dreamers. We run workshops, host industry leaders, and support student-led ventures from ideation to launch.
+        </p>
+        <a href="team.html" class="btn btn-primary">Meet the Team</a>
+      </div>
+      <div class="col-visual">
+        <div class="about-visual">
+          <div class="av-text">Success Squad</div>
+          <div class="av-sub">Est. 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--bg-2);">
+    <div class="section-label">Our Values</div>
+    <h2 class="section-title">What we <span class="accent">stand for.</span></h2>
+    <div class="values-grid">
+      <div class="value-item">
+        <span class="value-num">01</span>
+        <h3>Boldness</h3>
+        <p>We celebrate audacious ideas and the courage to pursue them, no matter how unconventional.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-num">02</span>
+        <h3>Collaboration</h3>
+        <p>We believe the best ventures are built together. Community is our greatest resource.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-num">03</span>
+        <h3>Execution</h3>
+        <p>Ideas are cheap. We push our members to move fast, iterate, and build real things.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-num">04</span>
+        <h3>Impact</h3>
+        <p>We build not just for profit, but for purpose — solving problems that truly matter.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <h2>Join a community of <span class="accent">builders.</span></h2>
+    <p>Applications are open. Take the first step toward building your vision.</p>
+    <a href="contact.html" class="btn btn-primary">Apply Now</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-logo"><span class="logo-bracket">[</span>Success Squad<span class="logo-bracket">]</span></span>
+        <p>Entrepreneurship Development Cell</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="team.html">Team</a>
+        <a href="events.html">Events</a>
+        <a href="startups.html">Startups</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/success_squad_8/" class="social-pill">Instagram</a>
+        <a href="https://www.linkedin.com/company/success-squad08/" class="social-pill">LinkedIn</a>
+        <a href="https://www.youtube.com/@Success_squad_08" class="social-pill">Youtube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Success Squad. All rights reserved.</span>
+      <span class="tagline-footer">From Vision to Venture.</span>
+    </div>
+  </footer>
+
+  <style>
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .two-col { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .about-visual {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(232,255,0,0.07), transparent 70%);
+    }
+    .av-text {
+      font-family: var(--font-display);
+      font-size: 6rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 4px;
+      line-height: 1;
+    }
+    .av-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+    .value-item {
+      border-top: 2px solid var(--border);
+      padding-top: 24px;
+      transition: border-color 0.3s;
+    }
+    .value-item:hover { border-top-color: var(--accent); }
+    .value-num {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .value-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .value-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+  </style>
+
+  <script src="main.js"></script>
+</body>
+</html>
