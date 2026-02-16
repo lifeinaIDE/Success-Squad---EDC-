@@ -2,6 +2,21 @@
 
 /* ---- RESET & ROOT ---- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  padding: 10px;
+}
 
 :root {
   --bg: #080b10;
@@ -762,4 +777,5 @@ body {
   .footer-top { flex-direction: column; }
   .event-row { flex-direction: column; align-items: flex-start; gap: 8px; }
   .cta-strip { padding: 60px 24px; }
+
 }
