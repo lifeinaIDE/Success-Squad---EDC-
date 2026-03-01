@@ -2,21 +2,6 @@
 
 /* ---- RESET & ROOT ---- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.container {
-  width: 100%;
-  padding: 10px;
-}
 
 :root {
   --bg: #080b10;
@@ -42,6 +27,23 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent zoom on input focus for mobile */
+input, select, textarea {
+  font-size: 16px;
+}
+
+/* Improve touch target sizes */
+a, button, .nav-link, .btn {
+  -webkit-tap-highlight-color: rgba(232,255,0,0.2);
+}
+
+/* Smooth scrolling for all devices */
+* {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ---- SCROLLBAR ---- */
@@ -753,11 +755,18 @@ body {
     transform: translateY(-110%);
     transition: transform 0.3s ease;
     z-index: 999;
+    max-height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
   }
 
   .nav-links.open { transform: translateY(0); }
 
-  .nav-link { width: 100%; text-align: center; padding: 12px; }
+  .nav-link { 
+    width: 100%; 
+    text-align: center; 
+    padding: 14px;
+    font-size: 0.95rem;
+  }
 
   .hero-stats {
     flex-wrap: wrap;
@@ -768,14 +777,213 @@ body {
   .stat-divider { width: 100%; height: 1px; }
 
   .events-header { flex-direction: column; align-items: flex-start; }
+  
+  /* Better spacing for mobile */
+  .section-title { font-size: clamp(1.8rem, 5vw, 3.2rem); }
+  
+  /* Pillar cards stack nicely */
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Team grid adjusts */
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  /* Make buttons more touch-friendly */
+  .btn {
+    padding: 15px 32px;
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 600px) {
-  .hero { padding-left: 24px; padding-right: 24px; }
-  .section { padding: 60px 24px; }
-  .footer { padding: 48px 24px 24px; }
-  .footer-top { flex-direction: column; }
-  .event-row { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .cta-strip { padding: 60px 24px; }
+  /* Navbar adjustments */
+  .navbar { padding: 0 16px; }
+  .nav-logo { font-size: 1.2rem; }
+  
+  /* Hero section */
+  .hero { 
+    padding-left: 20px; 
+    padding-right: 20px;
+    min-height: auto;
+    padding-top: calc(var(--nav-h) + 40px);
+    padding-bottom: 60px;
+  }
+  
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+  
+  .hero-sub {
+    font-size: 0.95rem;
+  }
+  
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+  
+  /* Stats section */
+  .hero-stats {
+    margin-top: 40px;
+    border-radius: 8px;
+  }
+  
+  .stat-item {
+    padding: 16px 24px;
+  }
+  
+  .stat-num {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  /* General sections */
+  .section { padding: 50px 20px; }
+  
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+  
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-bottom: 40px;
+  }
+  
+  /* Pillar cards */
+  .pillar-card {
+    padding: 28px 24px;
+  }
+  
+  .pillar-icon {
+    font-size: 1.8rem;
+  }
+  
+  /* Events */
+  .event-row { 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 8px;
+    padding: 18px 0;
+  }
+  
+  .event-name {
+    font-size: 0.95rem;
+  }
+  
+  .event-date {
+    font-size: 0.7rem;
+    min-width: auto;
+  }
+  
+  .event-tag {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+  
+  /* CTA strip */
+  .cta-strip { 
+    padding: 50px 20px;
+  }
+  
+  .cta-strip h2 {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+  }
+  
+  .cta-strip p {
+    font-size: 0.95rem;
+  }
+  
+  /* Footer */
+  .footer { 
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-top { 
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .footer-brand .nav-logo {
+    font-size: 1.5rem;
+  }
+  
+  .footer-links {
+    align-items: center;
+  }
+  
+  .footer-social {
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .social-pill {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    font-size: 0.75rem;
+  }
+  
+  /* Page header */
+  .page-header {
+    padding: 100px 20px 60px;
+  }
+  
+  .page-header h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+  
+  .page-header p {
+    font-size: 0.95rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.88rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
+/* Extra small devices */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .nav-logo {
+    font-size: 1rem;
+  }
+  
+  .hamburger span {
+    width: 20px;
+  }
+  
+  .stat-item {
+    padding: 12px 20px;
+  }
+  
+  .pillar-card {
+    padding: 24px 20px;
+  }
 }
