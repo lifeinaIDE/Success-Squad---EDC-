@@ -14,16 +14,18 @@ const navLinks = document.getElementById('navLinks');
 // Toggle menu
 hamburger?.addEventListener('click', (e) => {
   e.stopPropagation();
+  e.preventDefault();
+  
+  // Toggle open class on nav links
   navLinks.classList.toggle('open');
-  const spans = hamburger.querySelectorAll('span');
+  
+  // Toggle active class on hamburger for animation
+  hamburger.classList.toggle('active');
+  
+  // Prevent body scroll when menu is open
   if (navLinks.classList.contains('open')) {
-    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-    // Prevent body scroll when menu is open
     document.body.style.overflow = 'hidden';
   } else {
-    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     document.body.style.overflow = '';
   }
 });
@@ -32,12 +34,9 @@ hamburger?.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
   if (navLinks?.classList.contains('open') && 
       !navLinks.contains(e.target) && 
-      e.target !== hamburger) {
+      !hamburger?.contains(e.target)) {
     navLinks.classList.remove('open');
-    hamburger?.querySelectorAll('span').forEach(s => { 
-      s.style.transform = ''; 
-      s.style.opacity = ''; 
-    });
+    hamburger?.classList.remove('active');
     document.body.style.overflow = '';
   }
 });
@@ -47,13 +46,19 @@ document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     if (navLinks?.classList.contains('open')) {
       navLinks.classList.remove('open');
-      hamburger?.querySelectorAll('span').forEach(s => { 
-        s.style.transform = ''; 
-        s.style.opacity = ''; 
-      });
+      hamburger?.classList.remove('active');
       document.body.style.overflow = '';
     }
   });
+});
+
+// Handle window resize - close menu if resizing to desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1024 && navLinks?.classList.contains('open')) {
+    navLinks.classList.remove('open');
+    hamburger?.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 });
 
 // ---- COUNTER ANIMATION ----
