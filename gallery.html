@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Success Squad</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo"><span class="logo-bracket">[</span>Success Squad<span class="logo-bracket">]</span></div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="team.html" class="nav-link">Our Team</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="startups.html" class="nav-link">Startups</a></li>
+            <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link nav-cta">Get Involved</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <div class="section-label">Gallery</div>
+        <h1>Moments to <span class="accent">remember.</span></h1>
+        <p>A visual journey through our hackathons, workshops, and fests.</p>
+    </div>
+
+    <!-- E-Fest 2025 Carousel Section -->
+    <section class="section" style="background: var(--bg);">
+        <div class="section-label">2025</div>
+        <h2 class="section-title">E-Fest <span class="accent">2025</span></h2>
+
+        <div class="carousel" id="carousel-efest" data-index="0">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="images/success-squad-team.jpg" alt="E-Fest Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/success-squad-team.jpg" alt="E-Fest Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/success-squad-team.jpg" alt="E-Fest Image 3">
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="moveCarousel('carousel-efest', -1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveCarousel('carousel-efest', 1)">&#10095;</button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="jumpCarousel('carousel-efest', 0)"></span>
+                <span class="dot" onclick="jumpCarousel('carousel-efest', 1)"></span>
+                <span class="dot" onclick="jumpCarousel('carousel-efest', 2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Bootcamp Carousel Section -->
+    <section class="section" style="background: var(--bg-2, #111720);">
+        <div class="section-label">2026</div>
+        <h2 class="section-title">AI <span class="accent">Bootcamp</span></h2>
+
+        <div class="carousel" id="carousel-aibootcamp" data-index="0">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="images/success-squad-team.jpg" alt="AI Bootcamp Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/success-squad-team.jpg" alt="AI Bootcamp Image 2">
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="moveCarousel('carousel-aibootcamp', -1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveCarousel('carousel-aibootcamp', 1)">&#10095;</button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="jumpCarousel('carousel-aibootcamp', 0)"></span>
+                <span class="dot" onclick="jumpCarousel('carousel-aibootcamp', 1)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startup Pitch Day Carousel Section -->
+    <section class="section" style="background: var(--bg);">
+        <div class="section-label">2025</div>
+        <h2 class="section-title">Startup Pitch <span class="accent">Day</span></h2>
+
+        <div class="carousel" id="carousel-pitchday" data-index="0">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="images/success-squad-team.jpg" alt="Pitch Day Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/success-squad-team.jpg" alt="Pitch Day Image 2">
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="moveCarousel('carousel-pitchday', -1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveCarousel('carousel-pitchday', 1)">&#10095;</button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="jumpCarousel('carousel-pitchday', 0)"></span>
+                <span class="dot" onclick="jumpCarousel('carousel-pitchday', 1)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-strip">
+        <h2>Be part of our <span class="accent">next memory.</span></h2>
+        <p>Join us at our upcoming events and start your entrepreneurial journey.</p>
+        <a href="contact.html" class="btn btn-primary">Join Success Squad</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span class="nav-logo"><span class="logo-bracket">[</span>Success Squad<span
+                        class="logo-bracket">]</span></span>
+                <p>Entrepreneurship Development Cell</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a><a href="about.html">About</a>
+                <a href="team.html">Team</a><a href="events.html">Events</a>
+                <a href="startups.html">Startups</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/success_squad_8/" class="social-pill">Instagram</a>
+                <a href="https://www.linkedin.com/company/success-squad08/" class="social-pill">LinkedIn</a>
+                <a href="https://www.youtube.com/@Success_squad_08" class="social-pill">Youtube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Success Squad. All rights reserved.</span>
+            <span class="tagline-footer">From Vision to Venture.</span>
+        </div>
+    </footer>
+
+    <style>
+        .carousel {
+            position: relative;
+            width: 90%;
+            max-width: 780px;
+            /* Increased from 650px to 780px */
+            margin: 40px auto 0;
+            overflow: hidden;
+            border-radius: var(--radius, 12px);
+            border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+            background: var(--bg-card, rgba(255, 255, 255, 0.03));
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            /* Screen ratio adapted */
+            object-fit: cover;
+            display: block;
+            filter: grayscale(15%);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .carousel-slide:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 20px;
+            padding: 10px 14px;
+            cursor: pointer;
+            border-radius: 8px;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: var(--accent, #e8ff00);
+            color: #000;
+            border-color: transparent;
+        }
+
+        .carousel-btn.prev {
+            left: 10px;
+        }
+
+        .carousel-btn.next {
+            right: 10px;
+        }
+
+        /* Pagination Dots */
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+            align-items: center;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1.2);
+        }
+
+        .dot.active {
+            background: var(--accent, #e8ff00);
+            transform: scale(1.3);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+    </style>
+
+    <script src="main.js"></script>
+    <script>
+        function updateCarousel(carousel, track, currentIndex) {
+            carousel.dataset.index = currentIndex;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Update dots
+            const dots = carousel.querySelectorAll('.dot');
+            if (dots.length > 0) {
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[currentIndex].classList.add('active');
+            }
+        }
+
+        function moveCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const track = carousel.querySelector('.carousel-track');
+            const slides = track.querySelectorAll('.carousel-slide');
+
+            let currentIndex = parseInt(carousel.dataset.index);
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = slides.length - 1;
+            } else if (currentIndex >= slides.length) {
+                currentIndex = 0;
+            }
+
+            updateCarousel(carousel, track, currentIndex);
+        }
+
+        function jumpCarousel(carouselId, index) {
+            const carousel = document.getElementById(carouselId);
+            const track = carousel.querySelector('.carousel-track');
+            updateCarousel(carousel, track, index);
+        }
+    </script>
+</body>
+
+</html>
