@@ -107,10 +107,28 @@
         </div>
     </section>
 
-    <section class="cta-strip">
-        <h2>Be part of our <span class="accent">next memory.</span></h2>
-        <p>Join us at our upcoming events and start your entrepreneurial journey.</p>
-        <a href="contact.html" class="btn btn-primary">Join Success Squad</a>
+    <!-- General Memories Section -->
+    <section class="section" style="background: var(--bg-2, #111720); padding-bottom: 60px;">
+        <div class="section-label">All Times</div>
+        <h2 class="section-title">Our <span class="accent">Memories</span></h2>
+        
+        <div class="memories-marquee">
+            <div class="marquee-track">
+                <!-- Original set -->
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+                
+                <!-- Duplicate set for infinite scroll effect (exact same images) -->
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+                <img src="images/success-squad-team.jpg" alt="Memory" class="memory-item">
+            </div>
+        </div>
     </section>
 
     <footer class="footer">
@@ -235,6 +253,48 @@
         .dot.active {
             background: var(--accent, #e8ff00);
             transform: scale(1.3);
+        }
+
+        /* Memories Marquee Styles */
+        .memories-marquee {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 30px;
+            padding: 20px 0; /* To allow scale effect without clipping */
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .marquee-track {
+            display: inline-flex;
+            gap: 24px;
+            animation: scroll-marquee 25s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        .memory-item {
+            width: 320px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            flex-shrink: 0;
+            filter: grayscale(20%);
+            transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .memory-item:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes scroll-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 12px)); } /* 12px is half of the 24px gap */
         }
 
         body {
